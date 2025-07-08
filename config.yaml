@@ -1,0 +1,11 @@
+use_available_gpus: True
+batch_size_gpu: 64
+batch_size_cpu: 8
+
+# Available Pipelines: https://spacy.io/models/en#benchmarks. 'en_core_web_sm' CPU compatible & quick. 'en_core_web_trf' GPU compatible, more accurate but slow.
+ner_pipeline_gpu: 'en_core_web_trf'
+ner_pipeline_cpu: 'en_core_web_sm'
+
+# Availble Models: https://huggingface.co/models?pipeline_tag=zero-shot-classification
+zero_shot_model_gpu: 'facebook/bart-large-mnli'
+zero_shot_model_cpu: 'typeform/distilbert-base-uncased-mnli'
