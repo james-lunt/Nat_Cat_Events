@@ -6,7 +6,7 @@
 
 Requires: Python 3.10 
 
-- Use pip to install requirements to your terminal
+- Use pip to install requirements to your terminal. `pip install -r requirements.txt`
 - Change `config.yaml` to suit your hardware specifications and pick models:
     - `use_available_gpus`: Opt in or out of using your PC's GPU. Will only matter if a GPU is available to you.
 
