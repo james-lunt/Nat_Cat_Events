@@ -11,14 +11,14 @@ Requires: Python 3.10
     - `use_available_gpus`: Opt in or out of using your PC's GPU. Will only matter if a GPU is available to you.
 
 Applicable to GPU Users:
-    - `batch_size_gpu`: The batch size for GPU tasks
-    - `ner_pipeline_gpu`: The Named Entity Recognition pipeline to use for GPU tasks
-    - `zero_shot_model_gpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
+  - `batch_size_gpu`: The batch size for GPU tasks
+  - `ner_pipeline_gpu`: The Named Entity Recognition pipeline to use for GPU tasks
+  - `zero_shot_model_gpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
 
 Applicable to CPU Users:
-    - `batch_size_cpu`: The batch size for GPU tasks
-    - `ner_pipeline_cpu`: The Named Entity Recognition pipeline to use for GPU tasks
-    - `zero_shot_model_cpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
+  - `batch_size_cpu`: The batch size for GPU tasks
+  - `ner_pipeline_cpu`: The Named Entity Recognition pipeline to use for GPU tasks
+  - `zero_shot_model_cpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
 
 Available NER Pipelines: https://spacy.io/models/en#benchmarks. 'en_core_web_sm' CPU compatible & quick. 'en_core_web_trf' GPU compatible, more accurate but slow.
 
