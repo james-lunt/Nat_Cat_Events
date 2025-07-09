@@ -1,35 +1,87 @@
-Analysis & Segmentation of Natural Catastrophe Events
+# Analysis & Segmentation of Natural Catastrophe Events
 
-Definition of Nat-Cat Event:
-A "nat cat event" refers to a "natural catastrophe event." These are significant natural events that cause substantial damage and disruption. Examples of natural catastrophe events include:
-•	Earthquakes
-•	Hurricanes
-•	Tornadoes
-•	Floods
-•	Wildfires
-•	Tsunamis
-•	Volcanic eruptions
+## Definition of Nat-Cat Event
+
+A **"nat cat event"** refers to a **natural catastrophe event** — significant natural events that cause substantial damage and disruption.
+
+Examples include:
+
+- Earthquakes  
+- Hurricanes  
+- Tornadoes  
+- Floods  
+- Wildfires  
+- Tsunamis  
+- Volcanic eruptions  
+
 These events often result in significant economic losses, property damage, and can have severe impacts on human life and the environment.
 
-We are providing a dataset cataloguing media articles on Nat Cat events. This dataset was extracted from GDelt API.
+We are providing a dataset cataloguing media articles on Nat Cat events. This dataset was extracted from the **GDELT API**.
 
+---
 
-Part 1:
-Task 1:
-Exploratory Data Analysis: 
-o	Perform an initial inspection to understand the structure and content of the dataset. 
-o	Provide a summary of the dataset, including the number of articles, the range of publication dates, and the basic structure of the data, average length of titles, missing data, etc. 
+## Part 1
 
+### Task 1: Exploratory Data Analysis (EDA)
 
-Task 2:
-o	For this task, your main focus will be the analysis of the Title of the article
-o	Dataset is extremely noisy – contains a lot of irrelevant titles of articles
-o	General cleaning/prep should include duplicate removal, extra whitespace, special characters etc.  
-o	Focus should be on actual nat cat events that have occurred. 
-o	Criteria for Nat-Cat article titles we are looking for:
-	They must contain a location
-	They must represent an event that has occurred
+- Perform an initial inspection to understand the structure and content of the dataset.
+- Provide a summary of the dataset, including:
+  - Total number of articles
+  - Range of publication dates
+  - Basic structure of the data
+  - Average length of titles
+  - Presence and distribution of missing data
 
+---
 
-Part 2:
-to develop a component that utilizes the cleaned data from Part 1 to assign each type of natural catastrophe title into its corresponding category. The result should consist of 5 groups, specifically Earthquake, Floods, Volcano, Tornado, and Wildfire
+### Task 2: Title Cleaning and Relevance Filtering
+
+- **Focus:** Analysis of the article titles
+- **Challenges:** Dataset is extremely noisy; many titles are irrelevant
+- **General Cleaning & Preparation:**
+  - Remove duplicates
+  - Trim extra whitespace
+  - Strip out special characters
+- **Relevance Criteria for Titles:**
+  - Must **contain a location**
+  - Must **represent an actual natural catastrophe event that has occurred**
+
+---
+
+## Part 2: Event Categorization
+
+Develop a component that utilizes the cleaned data from **Part 1** to classify each relevant article title into one of the following five natural catastrophe categories:
+
+1. Earthquake  
+2. Flood  
+3. Volcano  
+4. Tornado  
+5. Wildfire  
+
+---
+
+## Usage
+
+- Use pip to install requirements to your terminal
+- Change `config.yaml` to suit your hardware specifications and pick models:
+    - `use_available_gpus`: Opt in or out of using your PC's GPU. Will only matter if a GPU is available to you.
+
+Applicable to GPU Users:
+    - `batch_size_gpu`: The batch size for GPU tasks
+    - `ner_pipeline_gpu`: The Named Entity Recognition pipeline to use for GPU tasks
+    - `zero_shot_model_gpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
+
+Applicable to CPU Users:
+    - `batch_size_cpu`: The batch size for GPU tasks
+    - `ner_pipeline_cpu`: The Named Entity Recognition pipeline to use for GPU tasks
+    - `zero_shot_model_cpu`: The Hugging Face NLI Zero-Shot-Classification for GPU tasks
+
+Available NER Pipelines: https://spacy.io/models/en#benchmarks. 'en_core_web_sm' CPU compatible & quick. 'en_core_web_trf' GPU compatible, more accurate but slow.
+
+Availble Hugging Face Models: https://huggingface.co/models?pipeline_tag=zero-shot-classification
+
+Run notebooks in order:
+
+1. 1_Exploratory_Data_Analysis.ipynb
+2. 2_DataCleaning.ipynb
+3. 3_Data_Segmentation.ipynb
