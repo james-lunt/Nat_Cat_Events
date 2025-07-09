@@ -16,8 +16,6 @@ Examples include:
 
 These events often result in significant economic losses, property damage, and can have severe impacts on human life and the environment.
 
-We are providing a dataset cataloguing media articles on Nat Cat events. This dataset was extracted from the **GDELT API**.
-
 ---
 
 ## Part 1
